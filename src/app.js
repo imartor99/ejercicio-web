@@ -71,25 +71,7 @@ if (typeof document !== 'undefined') {
          * @param {HTMLElement} buttonElement - La referencia al botón que fue pulsado.
          */
 function toggleContent(contentId, buttonElement) {
-    // Verificar que el documento esté disponible
-    if (typeof document === 'undefined') {
-        console.error('toggleContent: document no está disponible');
-        return;
-    }
-
     const contentDiv = document.getElementById(contentId);
-
-    // Verificar que el elemento existe
-    if (!contentDiv) {
-        console.error(`toggleContent: No se encontró el elemento con ID "${contentId}"`);
-        return;
-    }
-
-    // Verificar que el botón existe
-    if (!buttonElement) {
-        console.error('toggleContent: No se proporcionó un elemento de botón válido');
-        return;
-    }
 
     // 1. Alternar la clase 'hidden'
     // 'hidden' utiliza max-height: 0 y opacity: 0 para un efecto de transición suave.
@@ -98,12 +80,13 @@ function toggleContent(contentId, buttonElement) {
     // 2. Cambiar el texto del botón
     if (isHidden) {
         buttonElement.textContent = 'Revelar Contenido';
-        buttonElement.classList.remove('toggle-btn-active');
-        buttonElement.classList.add('toggle-btn-inactive');
+        // Cambiar el color del botón si se desea, por ejemplo, a un color más apagado al ocultar
+        buttonElement.classList.remove('bg-red-600', 'hover:bg-red-500');
+        buttonElement.style.backgroundColor = 'var(--color-secondary)'; // Usar el color secundario
     } else {
         buttonElement.textContent = 'Ocultar Contenido';
-        buttonElement.classList.remove('toggle-btn-inactive');
-        buttonElement.classList.add('toggle-btn-active');
+        // Cambiar el color del botón al revelar (opcional, si quieres que se vea distinto)
+        buttonElement.style.backgroundColor = 'var(--color-primary)'; // Usar el color primario
     }
 }
 
@@ -119,10 +102,4 @@ module.exports = {
     iniciarApp,
     datosCuriosos // Exportamos también los datos para verificarlos
 };
-
-// Hacer toggleContent disponible globalmente para los onclick handlers en HTML
-// Esto solo se ejecuta en el navegador, no en Node.js/Jest
-if (typeof window !== 'undefined') {
-    window.toggleContent = toggleContent;
-}
 

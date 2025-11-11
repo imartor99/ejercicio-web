@@ -278,10 +278,9 @@ img {
 .dynamic-content {
   max-height: 1000px;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, padding 0.5s ease-in-out, margin 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
   opacity: 1;
-  padding: 15px 0;
-  margin: 10px 0;
+  padding-bottom: 10px; /* Separación sutil del botón */
 }
 
 .dynamic-content.hidden {
@@ -289,45 +288,6 @@ img {
   opacity: 0;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-}
-
-/* Estilos para el botón toggle */
-.toggle-btn {
-  background-color: var(--color-secundario);
-  color: var(--color-blanco);
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(10, 147, 150, 0.3);
-  margin-top: 15px;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-}
-
-.toggle-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(10, 147, 150, 0.4);
-}
-
-.toggle-btn-active {
-  background-color: var(--color-primario);
-}
-
-.toggle-btn-active:hover {
-  background-color: #004d5f;
-}
-
-.toggle-btn-inactive {
-  background-color: var(--color-secundario);
-}
-
-.toggle-btn-inactive:hover {
-  background-color: #088489;
 }
 
 /* Estilos de Dato del Día (mantenidos por si los usas en index.html) */

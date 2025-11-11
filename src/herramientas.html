@@ -7,7 +7,6 @@
     <title>Herramientas Populares de IA</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="../images/favicon.png" type="image/png">
 </head>
 
 <body>
@@ -17,10 +16,10 @@
         <div class="container">
             <span class="logo">🚀 IA Hoy</span>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="impacto.html">Impacto Social y Ética</a></li>
-                <li><a href="herramientas.html">Herramientas Populares</a></li>
-                <li><a href="index.html#dinamico-interactivo">Dato</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Impacto Social y Ética</a></li>
+                <li><a href="#">Herramientas Populares</a></li>
+                <li><a href="#">Dato</a></li>
             </ul>
         </div>
     </nav>
@@ -33,9 +32,9 @@
     </header>
 
     <main class="container">
-
+        <!-- SECCIÓN DE GENERACIÓN (DINÁMICA) -->
         <section id="generacion">
-            <h2>Generación de Contenido</h2>
+            <h2>Generación de Contenido 🤖 (Interactivo)</h2>
             <p>Haz clic en "Revelar Contenido" en cada tarjeta para ver la descripción completa y su funcionalidad.</p>
 
             <div class="card-grid">
@@ -48,7 +47,8 @@
                         <p>Modelos de lenguaje avanzados capaces de redactar ensayos, resumir textos, generar código y
                             simular conversaciones humanas. Son el motor de la revolución conversacional de la IA.</p>
                     </div>
-                    <button class="toggle-btn toggle-btn-inactive" onclick="toggleContent('content-chatgpt', this)">Revelar Contenido</button>
+                    <button class="toggle-btn" onclick="toggleContent('content-chatgpt', this)">Revelar
+                        Contenido</button>
                 </div>
 
                 <!-- Tarjeta 2: Midjourney / DALL-E -->
@@ -61,7 +61,8 @@
                             (prompts).
                             Están revolucionando el diseño gráfico y el arte digital.</p>
                     </div>
-                    <button class="toggle-btn toggle-btn-inactive" onclick="toggleContent('content-midjourney', this)">Revelar Contenido</button>
+                    <button class="toggle-btn" onclick="toggleContent('content-midjourney', this)">Revelar
+                        Contenido</button>
                 </div>
 
                 <!-- Tarjeta 3: GitHub Copilot -->
@@ -74,7 +75,8 @@
                             los
                             desarrolladores a ser mucho más rápidos y eficientes.</p>
                     </div>
-                    <button class="toggle-btn toggle-btn-inactive" onclick="toggleContent('content-copilot', this)">Revelar Contenido</button>
+                    <button class="toggle-btn" onclick="toggleContent('content-copilot', this)">Revelar
+                        Contenido</button>
                 </div>
 
                 <!-- Tarjeta 4: Runway / Synthesia -->
@@ -86,14 +88,14 @@
                         <p>Permiten crear o editar vídeos, eliminar objetos y generar avatares de IA a partir de texto,
                             democratizando la producción de contenido audiovisual de alta calidad.</p>
                     </div>
-                    <button class="toggle-btn toggle-btn-inactive" onclick="toggleContent('content-video', this)">Revelar Contenido</button>
+                    <button class="toggle-btn" onclick="toggleContent('content-video', this)">Revelar Contenido</button>
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN DE PRODUCTIVIDAD (ESTÁTICA) -->
         <section id="productividad">
-            <h2>IA en la Productividad</h2>
+            <h2>IA en la Productividad 📈 (Estático)</h2>
             <p>Herramientas diseñadas para optimizar tareas diarias y análisis de datos en entornos profesionales.</p>
 
             <div class="card-grid">
@@ -118,9 +120,6 @@
         <div class="container">
             <p>&copy; 2025 Explorando la IA. Todos los derechos reservados.</p>
         </div>
-    </footer>
-
-    <script src="app.js"></script>
 </body>
 
 </html>
