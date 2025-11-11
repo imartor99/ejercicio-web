@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio Web - Base</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>El Auge de la Inteligencia Artificial</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Bienvenido al Ejercicio Web</h1>
-    <p>Esta es la plantilla base (Alumno 1).</p>
-    <script src="app.js"></script>
+
+    <header>
+        <div class="container">
+            <h1>El Auge de la IA</h1>
+            <p class="subtitulo">Explorando el presente y futuro de la Inteligencia Artificial.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="que-es">
+            <h2>¿Qué es la IA?</h2>
+            <p>La Inteligencia Artificial (IA) es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje, el razonamiento y la autocorrección.</p>
+            <img src="../images/cerebro.jpg" alt="Un cerebro digital abstracto simbolizando la IA">
+        </section>
+
+        <section id="tipos-ia">
+            <h2>Aplicaciones Clave</h2>
+            <p>La IA no es solo ciencia ficción; está en todas partes:</p>
+            <ul>
+                <li><strong>Procesamiento del Lenguaje Natural (PLN):</strong> Permite a las máquinas entender y responder al texto y la voz (ej. Asistentes virtuales, chatbots).</li>
+                <li><strong>Visión por Computadora:</strong> Permite a las máquinas interpretar y entender el mundo visual (ej. Coches autónomos, reconocimiento facial).</li>
+                <li><strong>Machine Learning (ML):</strong> Un subconjunto de la IA que permite a los sistemas aprender de los datos sin ser programados explícitamente.</li>
+            </ul>
+             <img src="../images/red.png" alt="Visualización de una red neuronal">
+        </section>
+
+        <section id="dinamico-interactivo">
+            <h2>Dato Interactivo del Día</h2>
+            <p>¿Sabías que la IA también puede ser creativa? Haz clic para descubrir un dato.</p>
+            
+            <button id="btn-dato" class="cta-button">¡Sorpréndeme!</button>
+            <div id="info-dato-wrapper" class="info-oculta">
+                <p id="info-dato"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Explorando la IA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
