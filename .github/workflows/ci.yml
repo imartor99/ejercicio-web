@@ -1,0 +1,35 @@
+name: CI Ejercicio Completo
+
+on:
+  push:
+    branches:
+      - "feature/**"
+      - "deploy"
+      - "release/**"
+      - "main"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - "deploy"
+      - "release/**"
+
+jobs:
+  test:
+    name: Instalación y Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Instalar Dependencias
+        run: npm install
+
+      - name: Ejecutar Tests
+        # El CI fallará (rojo) si 'npm test' devuelve un error.
+        run: npm test

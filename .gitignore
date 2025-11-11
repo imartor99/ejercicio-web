@@ -1,0 +1,11 @@
+# Dependencias
+/node_modules
+
+# Entornos de desarrollo
+.vscode/
+.idea/
+
+# Logs y Cache
+npm-debug.log
+.cache
+/dist
