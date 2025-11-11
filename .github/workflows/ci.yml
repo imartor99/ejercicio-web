@@ -35,39 +35,33 @@ jobs:
 
   # GENERACIÓN DE DOCUMENTACIÓN
   docs:
-    # Solo se ejecuta si el job 'test' pasa.
     needs: test
     name: Generar y Desplegar Documentación
     runs-on: ubuntu-latest
-
-    # Se ejecuta solo en los pushes a la rama 'main'
     if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout del Código
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js (necesario para la herramienta de docs)
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      # Instalar la herramienta de documentación (ej. JSDoc)
-      - name: Instalar JSDoc
-        run: npm install jsdoc --save-dev
+      - name: Instalar Dependencias (Necesario para 'jsdoc')
+        run: npm install
 
-      # Generar la documentación
+      # CORRECCIÓN: Llamamos al script 'docs' en package.json en lugar
+      # de ejecutar el comando directo que contenía el argumento -c jsdoc.json.
       - name: Generar Documentación
-        run: ./node_modules/.bin/jsdoc -c jsdoc.json src/ -d docs
+        run: npm run docs
 
-      # Desplegar los archivos de la carpeta 'docs' a la rama 'gh-pages'
-      # Esta acción simplifica el despliegue de cualquier carpeta a GitHub Pages.
       - name: Desplegar a GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # Carpeta que contiene los archivos generados
-          # La rama de destino para GitHub Pages
+          publish_dir: ./docs
           publish_branch: gh-pages
 
   #Despliegue S3 AWS
