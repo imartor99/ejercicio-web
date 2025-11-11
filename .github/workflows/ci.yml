@@ -70,7 +70,6 @@ jobs:
           # La rama de destino para GitHub Pages
           publish_branch: gh-pages
 
-
   #Despliegue S3 AWS
   deploy-s3:
     # Solo se ejecuta si el job 'test' pasa y estamos en la rama 'main'
