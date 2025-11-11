@@ -92,3 +92,5 @@ jobs:
         # IMPORTANTE: El nombre del bucket debe coincidir con el dominio: cicd.nachomt.work.gd
         run: |
           aws s3 sync src/ s3://cicd.nachomt.work.gd --delete
+
+          aws s3 sync images/ s3://cicd.nachomt.work.gd/images/ --delete
