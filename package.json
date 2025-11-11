@@ -4,7 +4,8 @@
   "description": "Plantilla base para el ejercicio con GitFlow y GitHub Actions.",
   "main": "src/app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs": "./node_modules/.bin/jsdoc src/ -d docs"
   },
   "keywords": [
     "web",
@@ -15,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^30.2.0"
+    "jest-environment-jsdom": "^30.2.0",
+    "jsdoc": "^4.0.5"
   }
 }
