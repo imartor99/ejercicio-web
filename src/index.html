@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Auge de la Inteligencia Artificial</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
 </head>
-<body>
 
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <span class="logo">🚀 IA Hoy</span>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="impacto.html">Impacto Social y Ética</a></li>
+                <li><a href="herramientas.html">Herramientas Populares</a></li>
+                <li><a href="#dinamico-interactivo">Dato</a></li>
+            </ul>
+        </div>
+    </nav>
     <header>
         <div class="container">
             <h1>El Auge de la IA</h1>
@@ -19,7 +32,9 @@
     <main class="container">
         <section id="que-es">
             <h2>¿Qué es la IA?</h2>
-            <p>La Inteligencia Artificial (IA) es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje, el razonamiento y la autocorrección.</p>
+            <p>La Inteligencia Artificial (IA) es la simulación de procesos de inteligencia humana por parte de
+                máquinas, especialmente sistemas informáticos. Estos procesos incluyen el aprendizaje, el razonamiento y
+                la autocorrección.</p>
             <img src="../images/cerebro.jpg" alt="Un cerebro digital abstracto simbolizando la IA">
         </section>
 
@@ -27,17 +42,20 @@
             <h2>Aplicaciones Clave</h2>
             <p>La IA no es solo ciencia ficción; está en todas partes:</p>
             <ul>
-                <li><strong>Procesamiento del Lenguaje Natural (PLN):</strong> Permite a las máquinas entender y responder al texto y la voz (ej. Asistentes virtuales, chatbots).</li>
-                <li><strong>Visión por Computadora:</strong> Permite a las máquinas interpretar y entender el mundo visual (ej. Coches autónomos, reconocimiento facial).</li>
-                <li><strong>Machine Learning (ML):</strong> Un subconjunto de la IA que permite a los sistemas aprender de los datos sin ser programados explícitamente.</li>
+                <li><strong>Procesamiento del Lenguaje Natural (PLN):</strong> Permite a las máquinas entender y
+                    responder al texto y la voz (ej. Asistentes virtuales, chatbots).</li>
+                <li><strong>Visión por Computadora:</strong> Permite a las máquinas interpretar y entender el mundo
+                    visual (ej. Coches autónomos, reconocimiento facial).</li>
+                <li><strong>Machine Learning (ML):</strong> Un subconjunto de la IA que permite a los sistemas aprender
+                    de los datos sin ser programados explícitamente.</li>
             </ul>
-             <img src="../images/red.png" alt="Visualización de una red neuronal">
+            <img src="../images/red.png" alt="Visualización de una red neuronal">
         </section>
 
         <section id="dinamico-interactivo">
             <h2>Dato Interactivo del Día</h2>
             <p>¿Sabías que la IA también puede ser creativa? Haz clic para descubrir un dato.</p>
-            
+
             <button id="btn-dato" class="cta-button">¡Sorpréndeme!</button>
             <div id="info-dato-wrapper" class="info-oculta">
                 <p id="info-dato"></p>
@@ -52,4 +70,5 @@
     </footer>
 
 </body>
+
 </html>
