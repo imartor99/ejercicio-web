@@ -1,0 +1,157 @@
+/* --- Variables de Color (buena práctica) --- */
+:root {
+    --color-primario: #005f73;
+    --color-secundario: #0a9396;
+    --color-fondo: #f8f9fa;
+    --color-texto: #343a40;
+    --color-blanco: #ffffff;
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* --- Reseteo Básico y Estilos Globales --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* --- Encabezado y Pie de Página --- */
+header {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    color: var(--color-blanco);
+    padding: 40px 0 30px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--color-secundario);
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+
+.subtitulo {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+
+footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    background-color: #e9ecef;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+
+/* --- Contenido Principal y Secciones --- */
+main {
+    padding-top: 30px;
+}
+
+
+section {
+    background-color: var(--color-blanco);
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+}
+
+
+h2 {
+    color: var(--color-primario);
+    font-size: 2rem;
+    border-bottom: 3px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+
+ul {
+    padding-left: 20px;
+}
+
+
+li {
+    margin-bottom: 10px;
+}
+
+
+/* --- Imágenes --- */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0 10px 0;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #eee;
+}
+
+
+/* --- Sección Interactiva --- */
+.cta-button {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.cta-button:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+
+#info-dato-wrapper {
+    background-color: #e6f7ff;
+    border-left: 5px solid var(--color-secundario);
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    opacity: 1;
+    max-height: 200px; /* Suficiente para el contenido */
+    overflow: hidden;
+}
+
+
+#info-dato-wrapper.info-oculta {
+    /* Clave para la animación: ocultamos el contenido */
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+
+#info-dato {
+    margin: 0;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #034078;
+}
+
