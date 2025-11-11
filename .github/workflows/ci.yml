@@ -31,5 +31,70 @@ jobs:
         run: npm install
 
       - name: Ejecutar Tests
-        # El CI fallará (rojo) si 'npm test' devuelve un error.
         run: npm test
+
+  # GENERACIÓN DE DOCUMENTACIÓN
+  docs:
+    # Solo se ejecuta si el job 'test' pasa.
+    needs: test
+    name: Generar y Desplegar Documentación
+    runs-on: ubuntu-latest
+
+    # Se ejecuta solo en los pushes a la rama 'main'
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout del Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js (necesario para la herramienta de docs)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      # Instalar la herramienta de documentación (ej. JSDoc)
+      - name: Instalar JSDoc
+        run: npm install jsdoc --save-dev
+
+      # Generar la documentación
+      - name: Generar Documentación
+        run: ./node_modules/.bin/jsdoc -c jsdoc.json src/ -d docs
+
+      # Desplegar los archivos de la carpeta 'docs' a la rama 'gh-pages'
+      # Esta acción simplifica el despliegue de cualquier carpeta a GitHub Pages.
+      - name: Desplegar a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs # Carpeta que contiene los archivos generados
+          # La rama de destino para GitHub Pages
+          publish_branch: gh-pages
+
+
+  #Despliegue S3 AWS
+  deploy-s3:
+    # Solo se ejecuta si el job 'test' pasa y estamos en la rama 'main'
+    needs: test
+    name: Despliegue a Producción (S3)
+    runs-on: ubuntu-latest
+
+    # Se despliega el código final a S3 cuando se hace push a 'main'
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout del Código
+        uses: actions/checkout@v4
+
+      # Configurar las credenciales de AWS usando los secrets de GitHub
+      - name: Configurar Credenciales de AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 # Reemplaza si tu bucket está en otra región
+
+      # Sincronizar la carpeta de código fuente (src/) con el bucket S3
+      - name: Desplegar Archivos a S3
+        # IMPORTANTE: El nombre del bucket debe coincidir con el dominio: cicd.nachomt.work.gd
+        run: |
+          aws s3 sync src/ s3://cicd.nachomt.work.gd --delete
