@@ -42,10 +42,10 @@ function iniciarApp(document) {
     boton.addEventListener('click', () => {
         // Obtenemos un nuevo dato
         const dato = obtenerDatoCurioso();
-       
+
         // Lo ponemos en el párrafo
         parrafoDato.textContent = dato;
-       
+
         // Mostramos el contenedor
         wrapperDato.classList.remove('info-oculta');
     });
@@ -65,7 +65,30 @@ if (typeof document !== 'undefined') {
     });
 }
 
+/**
+         * Función principal para alternar la visibilidad del contenido en las tarjetas.
+         * @param {string} contentId - El ID del div de contenido a mostrar/ocultar.
+         * @param {HTMLElement} buttonElement - La referencia al botón que fue pulsado.
+         */
+function toggleContent(contentId, buttonElement) {
+    const contentDiv = document.getElementById(contentId);
 
+    // 1. Alternar la clase 'hidden'
+    // 'hidden' utiliza max-height: 0 y opacity: 0 para un efecto de transición suave.
+    const isHidden = contentDiv.classList.toggle('hidden');
+
+    // 2. Cambiar el texto del botón
+    if (isHidden) {
+        buttonElement.textContent = 'Revelar Contenido';
+        // Cambiar el color del botón si se desea, por ejemplo, a un color más apagado al ocultar
+        buttonElement.classList.remove('bg-red-600', 'hover:bg-red-500');
+        buttonElement.style.backgroundColor = 'var(--color-secondary)'; // Usar el color secundario
+    } else {
+        buttonElement.textContent = 'Ocultar Contenido';
+        // Cambiar el color del botón al revelar (opcional, si quieres que se vea distinto)
+        buttonElement.style.backgroundColor = 'var(--color-primary)'; // Usar el color primario
+    }
+}
 
 
 /*
@@ -74,6 +97,7 @@ if (typeof document !== 'undefined') {
  * importarlas y probarlas por separado.
 */
 module.exports = {
+    toggleContent,
     obtenerDatoCurioso,
     iniciarApp,
     datosCuriosos // Exportamos también los datos para verificarlos

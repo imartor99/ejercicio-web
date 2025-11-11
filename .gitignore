@@ -3,9 +3,7 @@
 
 # Entornos de desarrollo
 .vscode/
-.idea/
 
 # Logs y Cache
-npm-debug.log
+*.log
 .cache
-/dist

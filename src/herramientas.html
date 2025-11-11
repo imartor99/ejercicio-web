@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas Populares de IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Barra de Navegación Fija -->
+    <nav id="navbar">
+        <div class="container">
+            <span class="logo">🚀 IA Hoy</span>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="impacto.html">Impacto Social y Ética</a></li>
+                <li><a href="herramientas.html">Herramientas Populares</a></li>
+                <li><a href="index.html#dinamico-interactivo">Dato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Herramientas que Están Cambiando el Mundo</h1>
+            <p class="subtitulo">Una selección de las plataformas de IA más utilizadas actualmente.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- SECCIÓN DE GENERACIÓN (DINÁMICA) -->
+        <section id="generacion">
+            <h2>Generación de Contenido 🤖 (Interactivo)</h2>
+            <p>Haz clic en "Revelar Contenido" en cada tarjeta para ver la descripción completa y su funcionalidad.</p>
+
+            <div class="card-grid">
+                <!-- Tarjeta 1: ChatGPT / Gemini -->
+                <div class="card">
+                    <h3>ChatGPT / Gemini</h3>
+                    <!-- Contenido a ocultar/mostrar -->
+                    <div id="content-chatgpt" class="dynamic-content hidden">
+                        <p><strong>Tipo:</strong> PLN / Conversacional.</p>
+                        <p>Modelos de lenguaje avanzados capaces de redactar ensayos, resumir textos, generar código y
+                            simular conversaciones humanas. Son el motor de la revolución conversacional de la IA.</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent('content-chatgpt', this)">Revelar
+                        Contenido</button>
+                </div>
+
+                <!-- Tarjeta 2: Midjourney / DALL-E -->
+                <div class="card">
+                    <h3>Midjourney / DALL-E</h3>
+                    <!-- Contenido a ocultar/mostrar -->
+                    <div id="content-midjourney" class="dynamic-content hidden">
+                        <p><strong>Tipo:</strong> Generación de Imágenes (Arte).</p>
+                        <p>Crean imágenes fotorrealistas o artísticas a partir de descripciones de texto simples
+                            (prompts).
+                            Están revolucionando el diseño gráfico y el arte digital.</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent('content-midjourney', this)">Revelar
+                        Contenido</button>
+                </div>
+
+                <!-- Tarjeta 3: GitHub Copilot -->
+                <div class="card">
+                    <h3>GitHub Copilot</h3>
+                    <!-- Contenido a ocultar/mostrar -->
+                    <div id="content-copilot" class="dynamic-content hidden">
+                        <p><strong>Tipo:</strong> Asistencia en Programación.</p>
+                        <p>Una herramienta que sugiere líneas o bloques de código completos en tiempo real, ayudando a
+                            los
+                            desarrolladores a ser mucho más rápidos y eficientes.</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent('content-copilot', this)">Revelar
+                        Contenido</button>
+                </div>
+
+                <!-- Tarjeta 4: Runway / Synthesia -->
+                <div class="card">
+                    <h3>Runway / Synthesia</h3>
+                    <!-- Contenido a ocultar/mostrar -->
+                    <div id="content-video" class="dynamic-content hidden">
+                        <p><strong>Tipo:</strong> Edición de Vídeo / Avatares.</p>
+                        <p>Permiten crear o editar vídeos, eliminar objetos y generar avatares de IA a partir de texto,
+                            democratizando la producción de contenido audiovisual de alta calidad.</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent('content-video', this)">Revelar Contenido</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PRODUCTIVIDAD (ESTÁTICA) -->
+        <section id="productividad">
+            <h2>IA en la Productividad 📈 (Estático)</h2>
+            <p>Herramientas diseñadas para optimizar tareas diarias y análisis de datos en entornos profesionales.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Tableau / Power BI (ML integrado)</h3>
+                    <p><strong>Función:</strong> Análisis de Datos.</p>
+                    <p>Utilizan ML para identificar tendencias, predecir resultados futuros y automatizar la
+                        visualización de grandes conjuntos de datos.</p>
+                </div>
+                <div class="card">
+                    <h3>Notion AI / Zapier</h3>
+                    <p><strong>Función:</strong> Automatización y Gestión.</p>
+                    <p>Integran IA para resumir notas, crear planes de acción y conectar aplicaciones de software para
+                        automatizar flujos de trabajo repetitivos.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Explorando la IA. Todos los derechos reservados.</p>
+        </div>
+</body>
+
+</html>
